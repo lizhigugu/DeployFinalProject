@@ -32,8 +32,6 @@ const server = app.listen(PORT, () => {
 
 const db = mongoose.connection
 
-// server.listen(PORT, ()=>{console.log(`GoMyWonJam listening on port ${PORT}!`)})
-
 const wss = new WebSocket.Server({server}) 
 
 db.once('open', ()=> {

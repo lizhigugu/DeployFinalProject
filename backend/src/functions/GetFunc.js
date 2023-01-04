@@ -38,18 +38,25 @@ const GetProductsByCategory = async(category, ws)=>{
     //sendData(["products",obj[0].products],ws);
 }
 
-const GetUserData = async(userLineId, ws)=>{
+const GetUserData = async (userLineId, ws)=>{
+    console.log("get user data");
+    let ifin = false
     UserModel.find({lineId:userLineId}, async function(err, obj){
         if(obj.length){
+            ifin = true;
             // console.log("userData: ", obj[0]);
             sendData(["userData",obj[0]], ws);
             sendData(["userAvaliable", true], ws);
+            console.log("true!");
+            
         }
         else{
             // console.log("user not found ;_;");
             sendData(["userAvaliable", false], ws);
+            console.log("false!");
         }
     })
+    return ifin;
 }
 
 const GetUserBill = async(userLineId, ws)=>{

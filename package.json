@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@mui/x-date-pickers": "^5.0.12",
+    "antd": "^4.24.2",
+    "cheerio": "^1.0.0-rc.12",
+    "request": "^2.88.2",
+    "cors": "^2.8.5"
+  },
+  "name": "GoMyWonJam",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Enfest/GoMyWonJam.git",
+  "author": "yihsin9111 <b10901121@ntu.edu.tw>",
+  "license": "MIT",
+  "scripts": {
+    "install:all": "cd frontend && yarn install && cd ../backend && yarn install",
+    "start": "cd frontend && yarn start",
+    "server": "cd backend && yarn server",
+    "install:prod": "cd frontend && yarn install --frozen-lockfile && cd ../backend && yarn install --frozen-lockfile",
+    "build": "cd frontend && yarn build",
+    "deploy": "cd backend && yarn deploy"
+  }
+}

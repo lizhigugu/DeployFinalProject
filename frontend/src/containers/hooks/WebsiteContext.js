@@ -23,6 +23,8 @@ const WebsiteContext = createContext({
     setTotal: {},
     catStatus: 0,
     setIsManager: {},
+    ifsend: false,
+    setifsend: {}
 
 })
 
@@ -38,6 +40,10 @@ const Managers =[
     {
         name: "LZT",
         id: "B10901111"
+    },
+    {
+        name: "廖子緹",
+        id: "Ub032c7f0ef28e9bd395d269afc517242"
     }
 
 ]
@@ -59,6 +65,7 @@ const WebsiteProvider = (props) => {
     const [stores, setStores]               = useState([]);
     const [paywhich, setPaywhich]           = useState(0);
     const [catStatus, setCatStatus]         =useState(0);
+    const [ifsend, setifsend]               =useState(false);
 
     const checkManager = (input_name, id) => {
         const getName = Managers.find(({name})=>(name===input_name));
@@ -156,7 +163,7 @@ const WebsiteProvider = (props) => {
                 userBill, shopping, setShopping, currentBillId, 
                 setCurrentBillId ,categories, products, bill, total, setTotal
                 ,deadlines,checkManager, isManager, iflog, setIflog, stores, paywhich, setPaywhich,
-                setUserBill, catStatus, setIsManager
+                setUserBill, catStatus, setIsManager, ifsend, setifsend
             }}
             {...props}
         />

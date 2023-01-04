@@ -183,6 +183,10 @@ const useBackend = () => {
         // console.log("get cat status");
         sendData(["GetCatStatus", payload]);
     }
+    const loginLine = (payload) =>{
+        console.log("loginLine");
+        sendData(["loginLine", payload]);
+    }
 
    
 
@@ -193,7 +197,7 @@ const useBackend = () => {
         AddItemToBill, AddBillToUser,  ConfirmBill , FindBill, UpdateBillAddress,
         DeleteBill, DeleteCategory, DeleteUser, DeleteProduct, DeleteItemFromBill, GetStores,
         getTBill, renewTBill, AddItemToTBill, DeleteItemFromTBill, AddSequenceList,UpdateItem, GetCatBill,
-        UpdateCategoryStatus, getCatStatus
+        UpdateCategoryStatus, getCatStatus, loginLine
     };
 };
 

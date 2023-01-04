@@ -10,29 +10,13 @@ import path from "path";
 //import express from "express";
 import cors from "cors";
 
-// import axios from "axios";
+const app = express()
 
-// const API_ROOT =
-//   process.env.NODE_ENV === "production"
-//     ? "/api"
-//     : "http://localhost:4000/api";
+if (process.env.NODE_ENV === "development") {
+  app.use(cors());
+ }
 
-// const WS_URL =
-//   process.env.NODE_ENV === "production"
-//     ? window.location.origin.replace(/^http/, "ws")
-//     : "ws://localhost:4000";
-
-// export const api = axios.create({ baseURL: API_ROOT });
-// const wss = new WebSocket(WS_URL);
-
-mongo.connect()
-
-const app = express()                               //create app middleware
-const server = http.createServer(app)               //use http protocol to create server
-const wss = new WebSocket.Server({server})   //
-const db = mongoose.connection
-
-if (process.env.NODE_ENV === "production") {
+ if (process.env.NODE_ENV === "production") {
   const __dirname = path.resolve();
   app.use(express.static(path.join(__dirname, "../frontend", "build")));
   app.get("/*", function (req, res) {
@@ -41,19 +25,39 @@ if (process.env.NODE_ENV === "production") {
 }
 
 const PORT = process.env.PORT || 4000;
-if (process.env.NODE_ENV === "development") {
-    app.use(cors());
-   }
 
-db.once('open', ()=> {
-    // console.log("MongoDB connected!");
-    wss.on('connection', (ws)=>{
-        //web socket connection logic
-        ws.box = ''; //record active ChatBox name
-       // wsConnect.initData(ws); //init data in the very beginning
-        ws.onmessage = (e)=>{wsConnect.onMessage(wss, ws, e);}
-    });
-})
+const server = app.listen(PORT, () => {
+  console.log(`Server is up on port ${PORT}.`);
+});
 
+const db = mongoose.connection
 
 server.listen(PORT, ()=>{console.log(`GoMyWonJam listening on port ${PORT}!`)})
+
+const wss = new WebSocket.Server({server}) 
+
+db.once('open', ()=> {
+  console.log("MongoDB connected!");
+  wss.on('connection', (ws)=>{
+      //web socket connection logic
+      ws.box = ''; //record active ChatBox name
+     // wsConnect.initData(ws); //init data in the very beginning
+      ws.onmessage = (e)=>{wsConnect.onMessage(wss, ws, e);}
+  });
+})
+
+mongo.connect()
+
+                           //create app middleware
+// const server = http.createServer(app)               //use http protocol to create server
+  //
+
+
+
+
+
+
+
+
+
+

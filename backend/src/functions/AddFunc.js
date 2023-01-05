@@ -59,8 +59,10 @@ const AddBillToUser = async(userLineId, BillId,ws)=>{
         payment:    '',
         address:    '',
     });
-  
-    bill.save();
+    await bill.save();
+    const load = await BillModel.find({userLineId: userLineId});
+    sendData(["userBill", load], ws);
+
 }
 
 const AddCategory = async(Category,ws)=>{

@@ -82,7 +82,7 @@ const useBackend = () => {
 
     //user updates address
     const UpdateBillAddress = (userLineId, billId, newAddr)=>{
-        sendData(["UpdateBillAddress",{billId, newAddr}]);
+        sendData(["UpdateBillAddress",{userLineId, billId, newAddr}]);
     }
 
     //manager update status

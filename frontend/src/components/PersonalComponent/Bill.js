@@ -133,7 +133,7 @@ const Bill = ({item, id}) => {
                             fullWidth={true}
                             sx={{display:"grid"}}
                         >
-                        <ChangeAddress setOpen={setChangeAddressOpen} receiver={item.receiver} phone={item.phone} address={item.address} />
+                        <ChangeAddress setOpen={setChangeAddressOpen} receiver={item.receiver} phone={item.phone} address={item.address} billId={item.billId} />
                         </Dialog>
                     </Box>
                 </Box>

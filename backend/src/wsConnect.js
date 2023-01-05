@@ -1,5 +1,5 @@
 import { AddUser ,AddBillToUser, AddCategory, AddProductToCategory, AddItemToBill, ConfirmBill } from './functions/AddFunc'
-import { UpdateUser, UpdateBillStatus, UpdateCategory, UpdateProduct, UpdateItem, UpdateCategoryStatus } from './functions/UpdateFunc'
+import { UpdateUser, UpdateBillStatus, UpdateCategory, UpdateProduct, UpdateItem, UpdateCategoryStatus, UpdateBillAddress } from './functions/UpdateFunc'
 import { GetCategories, GetProductsByCategory, GetUserData, GetUserBill, GetBill, GetCatBill } from './functions/GetFunc';
 import { DeleteBill, DeleteCategory, DeleteUser, DeleteProduct, DeleteItemFromBill } from './functions/DeleteFunc'
 import { AddItemToTBill, renewTBill, getTBill, DeleteItemFromTBill } from './functions/TemporaryBillFunc';
@@ -149,6 +149,11 @@ export default {
 
             case "loginLine":{
                 loginLine(payload, ws);
+                break;
+            }
+
+            case "UpdateBillAddress": {
+                UpdateBillAddress(payload,ws);
                 break;
             }
 

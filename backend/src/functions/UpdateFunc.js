@@ -80,6 +80,18 @@ const UpdateCategoryStatus = async (payload, ws) => {
     
 }
 
+const UpdateBillAddress = (payload, ws) => {
+    BillModel.find({billId: payload.billId}, async function(err,obj){
+        if(obj.length){
+            obj[0].address = payload.newAddr;
+            await obj[0].save();
+            const load = await BillModel.find({userLineId: payload.userLineId});
+            sendData(["userBill", load], ws);
+        }
+    })
+
+}
 
 
-export {UpdateUser, UpdateCategory, UpdateProduct, UpdateBillStatus,UpdateItem, UpdateCategoryStatus}
+
+export {UpdateUser, UpdateCategory, UpdateProduct, UpdateBillStatus,UpdateItem, UpdateCategoryStatus, UpdateBillAddress}

@@ -10,7 +10,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { useWebsite } from '../containers/hooks/WebsiteContext'; 
 import useBackend from '../containers/hooks/useBackend';
 
-const ChangeAddress=({setOpen, receiver, phone, address})=>{
+const ChangeAddress=({setOpen, receiver, phone, address, billId})=>{
 
     const [Phone, setPhone] = React.useState('');
     const [value, setValue] = React.useState("");
@@ -35,10 +35,11 @@ const ChangeAddress=({setOpen, receiver, phone, address})=>{
 
     const onHandleChangeAddr=()=>{
         const BillInfo = {
-            billId  : currentBillId,
-            address : value.substring(0,6)
+            billId  : billId,
+            address : value,
+            userLineId: userLineId
         }
-        UpdateBillAddress(BillInfo);
+        UpdateBillAddress(userLineId, billId, value);
     }
 
     var a=[]

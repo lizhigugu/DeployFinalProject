@@ -10,6 +10,7 @@ import BillPage from "./containers/BillPage";
 import ManagerPage from "./containers/ManagerPage";
 import CheckPage from "./containers/CheckPage";
 import Login from "./containers/Login";
+import UseLogin from "./containers/useLogin";
 
 // Bar Component Import
 import NavBar from "./components/BarComponent/NavBar";
@@ -46,6 +47,7 @@ function App() {
           <Route path="/personal" element={iflog? <PersonalPage />:<Login />} />
           <Route path="/personal/bills" element={iflog? <BillPage />:<Login />} />
           <Route path="/manager" element={(iflog && isManager)? <ManagerPage />:<Login />} />
+          <Route path="/forlogin" element={<UseLogin />} />
         </Routes>
         </DrawerHeader>
       </Main>

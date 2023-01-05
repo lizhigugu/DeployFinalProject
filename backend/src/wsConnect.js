@@ -5,6 +5,7 @@ import { DeleteBill, DeleteCategory, DeleteUser, DeleteProduct, DeleteItemFromBi
 import { AddItemToTBill, renewTBill, getTBill, DeleteItemFromTBill } from './functions/TemporaryBillFunc';
 import { getStores } from './functions/711Func';
 import { AddSequenceList } from './functions/SequenceListFunc';
+import { loginLine } from './functions/LineLogin';
 
 //helper functions
 // const sendData = (data, ws) =>{
@@ -152,6 +153,12 @@ export default {
 
             case "UpdateCategoryStatus":{
                 UpdateCategoryStatus(payload, ws);
+                break;
+            }
+
+            case "loginLine":{
+                console.log("here");
+                loginLine(payload, ws);
                 break;
             }
 

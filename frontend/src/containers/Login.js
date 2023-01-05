@@ -14,7 +14,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import axios from 'axios'
 import qs from 'qs'
 
-
 //functional component 
 const Login = () => {
     //set state
@@ -70,7 +69,7 @@ const Login = () => {
         // 必填
         URL += 'response_type=code' // 希望LINE回應什麼  但是目前只有code能選
         URL += `&client_id=${1657771320}` // 你的頻道ID
-        URL += `&redirect_uri=https://deployfinalproject-production.up.railway.app/login` 
+        URL += `&redirect_uri=http://localhost:3001/login` 
         URL += '&state=2361886424832' // 用來防止跨站請求的 之後回傳會傳回來給你驗證 通常設亂數 這邊就先放123456789
         URL += '&scope=openid%20profile' // 跟使用者要求的權限 目前就三個能選 openid profile email
         // 選填
@@ -86,6 +85,9 @@ const Login = () => {
     useEffect(()=>{
         console.log(info)
         if(info.search && !ifsend){
+            setTimeout(function(){
+                console.log("e500");
+            }, 1000);
             const value = qs.parse(info.search, { ignoreQueryPrefix: true });
             loginLine(value.code)
             setifsend(true);

@@ -41,7 +41,7 @@ const CheckPage = () => {
     
     //hooks
     const {bill, total, userData, stores, userLineId, paywhich} = useWebsite();
-    const {ConfirmBill, GetStores, AddBillToUser, renewTBill} = useBackend();
+    const {ConfirmBill, GetStores, AddBillToUser, renewTBill, GetUserBill} = useBackend();
     const navigate = useNavigate();
 
     React.useEffect(()=>{
@@ -101,6 +101,7 @@ const CheckPage = () => {
         renewTBill(userLineId, bill.ItemList[paywhich].category);
         // console.log("renewTBill");
         navigate("/personal/bills");
+        GetUserBill(userLineId);
     }
 
 

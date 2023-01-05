@@ -10,6 +10,8 @@ import path from "path";
 //import express from "express";
 import cors from "cors";
 
+const db = mongoose.connection
+
 const app = express()
 
 if (process.env.NODE_ENV === "development") {
@@ -30,7 +32,7 @@ const server = app.listen(PORT, () => {
   console.log(`Server is up on port ${PORT}.`);
 });
 
-const db = mongoose.connection
+
 
 const wss = new WebSocket.Server({server}) 
 

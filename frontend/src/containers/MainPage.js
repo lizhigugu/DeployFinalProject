@@ -13,11 +13,12 @@ import useBackend from "./hooks/useBackend";
 const MainPage = () => {
 
     //set state
-    const {GetCategories} = useBackend();
+    const {GetCategories, GetProductsByCategory} = useBackend();
 
     const geting = () =>{
         console.log("in");
         GetCategories();
+        GetProductsByCategory("all");
     }
 
     useEffect(()=>{geting()},[])

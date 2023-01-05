@@ -12,7 +12,7 @@ client.onopen = async ()=> {
     await client.send(JSON.stringify(["GetCategories","/"]));
     await client.send(JSON.stringify(["GetProductsByCategory","all"]));
     if(!useLine){
-        await client.send(JSON.stringify(["loginLine", payload]));
+        await client.send(JSON.stringify(["loginLine", useLine]));
         cleanuseLine();
     }
 

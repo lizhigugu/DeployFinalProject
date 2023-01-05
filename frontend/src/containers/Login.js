@@ -12,7 +12,8 @@ import client from "./hooks/wsConnect";
 //import navigate
 import { useNavigate, useLocation } from "react-router-dom";
 
-import axios from 'axios'
+import { setuseLine } from "./hooks/useLindId";
+
 import qs from 'qs'
 
 //functional component 
@@ -27,7 +28,7 @@ const Login = () => {
     const [iflinesend, setIflinesend] = useState(false);
 
     //hook import
-    const { checkManager, iflog, ifsend, setifsend } = useWebsite();
+    const { checkManager, iflog, ifsend, setifsend} = useWebsite();
     const { GetUserData, AddUser, getTBill, loginLine } = useBackend();
 
     //navigate define
@@ -87,14 +88,10 @@ const Login = () => {
     useEffect(()=>{
         console.log(info)
         if(info.search && !ifsend){
-                console.log("client in login: ", client);
-                setTimeout(function(){
-                    return true;
-                }, 1000).then();
-                const value = qs.parse(info.search, { ignoreQueryPrefix: true });
-                loginLine(value.code)
-                setifsend(true);
-
+            console.log("client in login: ", client);
+            const value = qs.parse(info.search, { ignoreQueryPrefix: true });
+            setifsend(true);
+            setuseLine(value.code)
         }
         else{
             setifsend(false);

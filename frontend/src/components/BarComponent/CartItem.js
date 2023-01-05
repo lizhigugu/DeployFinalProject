@@ -20,7 +20,7 @@ const CartInclude = ({open ,setOpen}) => {
 
     //
     useEffect(()=>{
-        console.log("cartitem: ", bill);
+        // console.log("cartitem: ", bill);
     },[])
 
     //navigate define

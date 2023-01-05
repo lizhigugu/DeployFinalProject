@@ -20,7 +20,7 @@ const UpdateBillForm = ({item}) => {
 
     }
     const onUpdateBill = () => {
-        console.log("update bill");
+        // console.log("update bill");
     }
 
     //return

@@ -16,7 +16,7 @@ const MainPage = () => {
     const {GetCategories, GetProductsByCategory} = useBackend();
 
     const geting = () =>{
-        console.log("in");
+        // console.log("in");
         GetCategories();
         GetProductsByCategory("all");
     }

@@ -107,7 +107,7 @@ const AddProductForm = ({category}) => {
             sold:0,
             buyers:[]
         }))
-        console.log('ops',ops)
+        // console.log('ops',ops)
         const Product = {
             name: name,
             category: whichCategory,
@@ -118,7 +118,7 @@ const AddProductForm = ({category}) => {
             option_type: optionNum,
             options: ops
         }
-        console.log("Product: ", Product);
+        // console.log("Product: ", Product);
         AddProductToCategory(Product);
         setOpen(false);
         

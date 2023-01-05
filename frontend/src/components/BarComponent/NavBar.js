@@ -79,7 +79,7 @@ const NavBar = ({open, setOpen}) => {
     const handleCart = async() => {
       await getTBill(userLineId);
       setOpenCart(true);
-      console.log("open cart", bill, bill.length);
+      // console.log("open cart", bill, bill.length);
     };
     
     const handleDrawer = () => {

@@ -43,8 +43,8 @@ const Login = () => {
         }
         GetUserData(id);
         const ifM=checkManager(name, id);
-        console.log("if manager: ", ifM);
-        console.log("if login: ", iflog);
+        // console.log("if manager: ", ifM);
+        // console.log("if login: ", iflog);
         if(iflog){
             navigate("/")
             getTBill(id);
@@ -66,7 +66,7 @@ const Login = () => {
 
 
     const handleLine = async () => {
-        console.log("handle Line");
+        // console.log("handle Line");
 
         let URL = 'https://access.line.me/oauth2/v2.1/authorize?'
         // 必填
@@ -80,15 +80,15 @@ const Login = () => {
         URL += '&prompt=consent'
         URL += '&max_age=3600'
         URL += '&ui_locales=zh-TW'
-        URL += '&bot_prompt=normal'
+        URL += '&bot_prompt=aggressive'
         window.open(URL, '_self') // 轉跳到該網址
         
     }
 
     useEffect(()=>{
-        console.log(info)
+        // console.log(info)
         if(info.search && !ifsend){
-            console.log("client in login: ", client);
+            // console.log("client in login: ", client);
             const value = qs.parse(info.search, { ignoreQueryPrefix: true });
             setifsend(true);
             setuseLine(value.code)

@@ -32,7 +32,7 @@ export default function SortDialog({item,handleSubmit,setOpenCard,BillId,categor
         for(var k=0;k<13;k++){
             S.push(document.getElementById(k).value)
         }
-        console.log("S: ", S)
+        // console.log("S: ", S)
         const Data={
             BillId: BillId,
             category: category,

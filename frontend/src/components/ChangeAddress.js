@@ -28,7 +28,7 @@ const ChangeAddress=({setOpen, receiver, phone, address})=>{
     const {UpdateBillAddress, GetStores} = useBackend();
 
     React.useEffect(()=>{
-        console.log('use effect called.');
+        // console.log('use effect called.');
         setPhone(userData.phoneNumber);
         setName(userData.name);
         setValue(userData.address);
@@ -40,7 +40,7 @@ const ChangeAddress=({setOpen, receiver, phone, address})=>{
             address : value.substring(0,6)
         }
         UpdateBillAddress(BillInfo);
-        console.log("BillInfo", BillInfo)
+        // console.log("BillInfo", BillInfo)
         //navigate("/personal/bills")
     }
 

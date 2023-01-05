@@ -47,7 +47,7 @@ function App() {
           <Route path="/personal" element={iflog? <PersonalPage />:<Login />} />
           <Route path="/personal/bills" element={iflog? <BillPage />:<Login />} />
           <Route path="/manager" element={(iflog && isManager)? <ManagerPage />:<Login />} />
-          <Route path="/forlogin" element={<UseLogin />} />
+          {/* <Route path="/forlogin" element={<UseLogin />} /> */}
         </Routes>
         </DrawerHeader>
       </Main>

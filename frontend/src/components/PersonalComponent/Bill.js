@@ -29,7 +29,7 @@ const Bill = ({item, id}) => {
     const handleSubmit=()=>{
         setSubmit(true)
         var a=[]
-        console.log("item: ",item.items)
+        // console.log("item: ",item.items)
         item.items.map((item,index)=>{
             item.product_type?a.push({
                 name: item.name,
@@ -41,8 +41,8 @@ const Bill = ({item, id}) => {
                 _id: item._id,
             }):a.push(item)
         })
-        console.log("a: ", a)
-        console.log("billID: ", item.billId)
+        // console.log("a: ", a)
+        // console.log("billID: ", item.billId)
         UpdateItem({
             id: item.billId,
             items: a})
@@ -50,7 +50,7 @@ const Bill = ({item, id}) => {
 
     //const define
     //console.log(Submit)
-    console.log(item)
+    // console.log(item)
     let total_type=false
     item.items.map((item,index)=>{
         total_type|=item.product_type

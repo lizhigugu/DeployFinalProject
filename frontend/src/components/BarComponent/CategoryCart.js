@@ -30,7 +30,7 @@ const CategoryCart = ({items, category, ind, setOpen}) => {
 
     //function define
     const onDeleteItemFromBill = (input) => {
-        console.log("DeleteBill: ", input);
+        // console.log("DeleteBill: ", input);
         DeleteItemFromTBill(userLineId, category, input);
     }
 
@@ -39,7 +39,7 @@ const CategoryCart = ({items, category, ind, setOpen}) => {
         navigate("/check");
         setTotal(total);
         setOpen(false);
-        console.log("handle pay");
+        // console.log("handle pay");
     }
     return(
         <Box sx={{

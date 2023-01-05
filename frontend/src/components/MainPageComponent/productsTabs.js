@@ -25,7 +25,7 @@ function ProductsTabs() {
   const [renderProducts, setRenderProducts] = useState([]);
 
   const handleChange = (event, newValue) => {
-    console.log(newValue);
+    // console.log(newValue);
     setValue(newValue);
   };
 
@@ -40,8 +40,8 @@ function ProductsTabs() {
   },[value])
 
   useEffect(()=>{
-    console.log("client: ", client);
-    console.log("rerender products");
+    // console.log("client: ", client);
+    // console.log("rerender products");
   },[products]);
 
   return (

@@ -17,7 +17,7 @@ const UseLogin = async () => {
 
     let info = useLocation();
 
-        console.log(info)
+        // console.log(info)
         const value = qs.parse(info.search, { ignoreQueryPrefix: true });
 
         let options = qs.stringify({ // POST的參數  用Qs是要轉成form-urlencoded 因為LINE不吃JSON格式
@@ -27,7 +27,7 @@ const UseLogin = async () => {
             client_id: '1657771320',
             client_secret: '87e9ecd48401b88aa9feab300724ea3a'
         })
-        console.log(options);
+        // console.log(options);
 
         const feedback = await axios({
             method: 'post',
@@ -44,7 +44,7 @@ const UseLogin = async () => {
             }
         }).then(res => res.data);
 
-        console.log("feedback: ", feedback);
+        // console.log("feedback: ", feedback);
     
     // console.log(info)
     // const value = qs.parse(info.search, { ignoreQueryPrefix: true });

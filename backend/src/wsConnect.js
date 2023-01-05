@@ -15,7 +15,7 @@ import { loginLine } from './functions/LineLogin';
 
 export default {
     initData: (ws) => {
-        console.log('data initialization called.')
+        // console.log('data initialization called.')
     },
     onMessage: async (wss, ws, e) => {
         const [task, payload] = JSON.parse(e.data);
@@ -127,12 +127,12 @@ export default {
             }
             case "AddItemToTBill":{
                 AddItemToTBill(payload.lineId, payload.item, ws);
-                console.log("test",payload.item)
+                // console.log("test",payload.item)
                 break;
             }
             case "getTBill":{
                 getTBill(payload, ws);
-                console.log("test",payload)
+                // console.log("test",payload)
                 break;
             }
             
@@ -157,7 +157,7 @@ export default {
             }
 
             case "loginLine":{
-                console.log("here");
+                // console.log("here");
                 loginLine(payload, ws);
                 break;
             }

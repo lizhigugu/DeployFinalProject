@@ -184,7 +184,7 @@ const useBackend = () => {
         sendData(["GetCatStatus", payload]);
     }
     const loginLine = (payload) =>{
-        console.log("loginLine");
+        // console.log("loginLine");
         sendData(["loginLine", payload]);
     }
 

@@ -40,7 +40,7 @@ const CategoryListItem = ({item, ind, atwhich, setAtwhich}) =>{
     //function define
 
     const handleDelete = () => {
-        console.log("handle Delete");
+        // console.log("handle Delete");
         DeleteCategory(item);
     }
 
@@ -56,7 +56,7 @@ const CategoryListItem = ({item, ind, atwhich, setAtwhich}) =>{
             alert("請先關掉一個商品分類再開啟下一個")
             return
         }
-        console.log("handle expand");
+        // console.log("handle expand");
         setOpen(!open);
     }
 

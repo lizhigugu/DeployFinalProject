@@ -27,7 +27,7 @@ const UpdateCategory = async(category,ws)=>{ //date not updated ?
     GetCategories(ws);
 }
 const UpdateProduct = async(product, ws)=>{
-    console.log('updating product...',product);
+    // console.log('updating product...',product);
     await ProductModel.findOneAndUpdate({name:product.name,category:product.category},
         {
             name: product.name,

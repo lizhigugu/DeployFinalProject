@@ -21,7 +21,7 @@ const OptionTextField = ({setOptions, num, options}) => {
         setOptions(newArr);
     }
     useEffect(()=>{
-        console.log('options',options)
+        // console.log('options',options)
     },[options])
 
     //return

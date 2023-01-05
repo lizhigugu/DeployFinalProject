@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useWebsite } from "../../containers/hooks/WebsiteContext";
 import useBackend from "../../containers/hooks/useBackend"
+import client from "../../containers/hooks/wsConnect";
 
 // mui import
 import Box from '@mui/material/Box';
@@ -32,10 +33,8 @@ function ProductsTabs() {
   useEffect(()=>{
     async function fetchData(){
       await GetCategories();
-      //await GetProductsByCategory(categories[0]);
     };
     fetchData();
-    //if(categories[0]) setValue(categories[0]); 使用login
     setRenderProducts(products);
   }, [])
 
@@ -47,6 +46,11 @@ function ProductsTabs() {
     fetchData();
     setRenderProducts(products);
   },[value])
+
+  useEffect(()=>{
+    console.log("client: ", client);
+    console.log("rerender products");
+  },[products]);
 
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>

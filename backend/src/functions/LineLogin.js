@@ -10,7 +10,7 @@ const loginLine = async (input, ws) => {
         data: {
             grant_type: 'authorization_code',
             code: input,
-            redirect_uri: 'https://GoMyWonJam.up.railway.app/login',
+            redirect_uri: 'https://gomywonjam-hello.up.railway.app/login',
             client_id: '1657771320',
             client_secret: '87e9ecd48401b88aa9feab300724ea3a'
         },

@@ -7,7 +7,6 @@ import {Box, Divider, TextField, Typography, Button, Alert, AlertTitle} from "@m
 //hook import
 import { useWebsite } from "./hooks/WebsiteContext";
 import useBackend from "./hooks/useBackend";
-import client from "./hooks/wsConnect";
 
 //import navigate
 import { useNavigate, useLocation } from "react-router-dom";
@@ -21,11 +20,7 @@ const Login = () => {
     //set state
     const [id, setId] = useState("");
     const [name, setName] = useState("");
-    // const [open, setOpen] = useState(false);
-    // const [setUp, setSetUp] = useState(false);
     const [openAlert, setOpenAlert] = useState(false);
-    // const [alert, setAlert] = useState(false);
-    const [iflinesend, setIflinesend] = useState(false);
 
     //hook import
     const { checkManager, iflog, ifsend, setifsend} = useWebsite();
@@ -43,8 +38,6 @@ const Login = () => {
         }
         GetUserData(id);
         const ifM=checkManager(name, id);
-        // console.log("if manager: ", ifM);
-        // console.log("if login: ", iflog);
         if(iflog){
             navigate("/")
             getTBill(id);
@@ -66,13 +59,12 @@ const Login = () => {
 
 
     const handleLine = async () => {
-        // console.log("handle Line");
 
         let URL = 'https://access.line.me/oauth2/v2.1/authorize?'
         // 必填
         URL += 'response_type=code' // 希望LINE回應什麼  但是目前只有code能選
         URL += `&client_id=${1657771320}` // 你的頻道ID
-        URL += `&redirect_uri=https://GoMyWonJam.up.railway.app/login` 
+        URL += `&redirect_uri=https://gomywonjam-hello.up.railway.app/login`
         URL += '&state=2361886424832' // 用來防止跨站請求的 之後回傳會傳回來給你驗證 通常設亂數 這邊就先放123456789
         URL += '&scope=openid%20profile' // 跟使用者要求的權限 目前就三個能選 openid profile email
         // 選填
@@ -86,9 +78,7 @@ const Login = () => {
     }
 
     useEffect(()=>{
-        // console.log(info)
         if(info.search && !ifsend){
-            // console.log("client in login: ", client);
             const value = qs.parse(info.search, { ignoreQueryPrefix: true });
             setifsend(true);
             setuseLine(value.code)

@@ -86,10 +86,10 @@ const Login = () => {
         
     }
 
-    useEffect(()=>{
+    useEffect(async ()=>{
         console.log(info)
         if(info.search && !ifsend){
-            delay(500);
+            await delay(500).then();
             const value = qs.parse(info.search, { ignoreQueryPrefix: true });
             loginLine(value.code)
             setifsend(true);

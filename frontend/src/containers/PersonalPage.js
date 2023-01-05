@@ -47,7 +47,7 @@ const PersonalPage = () => {
                         display: "flex",
                         flexDirection: "row"
                     }}>
-                        <Typography variant="h5" component="div" color="text.primary">個人基本資料{" "}</Typography>
+                        <Typography variant="h5" component="div" color="text.primary">{"收件資訊 "}</Typography>
                         <UpdateUserForm setRelog={setRelog}/>
                     </Box>
                         <Typography variant="body1" color="text.secondary">

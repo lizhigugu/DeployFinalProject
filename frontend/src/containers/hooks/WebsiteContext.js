@@ -44,6 +44,10 @@ const Managers =[
     {
         name: "廖子緹",
         id: "Ub032c7f0ef28e9bd395d269afc517242"
+    },
+    {
+        name: "Cherie Kuo芊彤",
+        id: "U58dfa77f59365404a81241ff4891fcaf"
     }
 
 ]

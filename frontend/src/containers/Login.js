@@ -11,11 +11,8 @@ import useBackend from "./hooks/useBackend";
 //import navigate
 import { useNavigate, useLocation } from "react-router-dom";
 
+import axios from 'axios'
 import qs from 'qs'
-
-function delay(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
-}
 
 
 //functional component 
@@ -86,10 +83,9 @@ const Login = () => {
         
     }
 
-    useEffect(async ()=>{
+    useEffect(()=>{
         console.log(info)
         if(info.search && !ifsend){
-            await delay(500).then();
             const value = qs.parse(info.search, { ignoreQueryPrefix: true });
             loginLine(value.code)
             setifsend(true);

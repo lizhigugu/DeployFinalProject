@@ -31,20 +31,12 @@ function ProductsTabs() {
 
   //get existing categories on each re-render.
   useEffect(()=>{
-    async function fetchData(){
-      await GetCategories();
-    };
-    fetchData();
-    setRenderProducts(products);
+    GetCategories();
   }, [])
 
   //
   useEffect(()=>{
-    async function fetchData(){
-      await GetProductsByCategory(value);
-    }
-    fetchData();
-    setRenderProducts(products);
+    GetProductsByCategory(value);
   },[value])
 
   useEffect(()=>{

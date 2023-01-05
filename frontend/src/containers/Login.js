@@ -87,16 +87,13 @@ const Login = () => {
     useEffect(()=>{
         console.log(info)
         if(info.search && !ifsend){
-            async function waiting(){
                 console.log("client in login: ", client);
-                await setTimeout(function(){
+                setTimeout(function(){
                     return true;
                 }, 1000).then();
                 const value = qs.parse(info.search, { ignoreQueryPrefix: true });
                 loginLine(value.code)
                 setifsend(true);
-            }
-            waiting();
 
         }
         else{

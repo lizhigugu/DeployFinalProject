@@ -2,8 +2,9 @@
 // import {useState} from "react";
 
 // Component import
+import { useEffect } from "react";
 import ProductsTabs from "../components/MainPageComponent/productsTabs";
-import client from "./hooks/wsConnect";
+
 import useBackend from "./hooks/useBackend";
 
 // get items function import
@@ -14,21 +15,21 @@ const MainPage = () => {
     //set state
     const {GetCategories} = useBackend();
 
+    const geting = () =>{
+        console.log("in");
+        GetCategories();
+    }
+
+    useEffect(()=>{geting()},[])
+
 
     //set function 
-    useEffect(()=>{
-        console.log("in mainpage useeffect");
-        console.log("client: ", client);
-        GetCategories();
-      }, [])
 
 
     //return
     return(
-        <>
-        {GetCategories()}
+
         <ProductsTabs />
-        </>
     )
 
 }

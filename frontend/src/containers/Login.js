@@ -13,6 +13,10 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 import qs from 'qs'
 
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
 
 //functional component 
 const Login = () => {
@@ -85,6 +89,7 @@ const Login = () => {
     useEffect(()=>{
         console.log(info)
         if(info.search && !ifsend){
+            delay(500);
             const value = qs.parse(info.search, { ignoreQueryPrefix: true });
             loginLine(value.code)
             setifsend(true);

@@ -2,8 +2,9 @@ let useLine = ""
 
 const setuseLine = (input) => {
     useLine = input;
-    console.log("useLine input: ", input)
+    console.log("useLine input: ", input," | ", useLine);
 }
+
 const getuseLine = () => {
     return useLine;
 }

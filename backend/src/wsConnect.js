@@ -7,15 +7,8 @@ import { getStores } from './functions/711Func';
 import { AddSequenceList } from './functions/SequenceListFunc';
 import { loginLine } from './functions/LineLogin';
 
-//helper functions
-// const sendData = (data, ws) =>{
-//     ws.send(JSON.stringify(data));
-//     console.log('send data called. (in wsConnect.js, line 5)');
-// }
-
 export default {
     initData: (ws) => {
-        // console.log('data initialization called.')
     },
     onMessage: async (wss, ws, e) => {
         const [task, payload] = JSON.parse(e.data);
@@ -127,12 +120,10 @@ export default {
             }
             case "AddItemToTBill":{
                 AddItemToTBill(payload.lineId, payload.item, ws);
-                // console.log("test",payload.item)
                 break;
             }
             case "getTBill":{
                 getTBill(payload, ws);
-                // console.log("test",payload)
                 break;
             }
             
@@ -157,7 +148,6 @@ export default {
             }
 
             case "loginLine":{
-                // console.log("here");
                 loginLine(payload, ws);
                 break;
             }

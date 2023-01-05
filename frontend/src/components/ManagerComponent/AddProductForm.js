@@ -41,7 +41,6 @@ const AddProductForm = ({category}) => {
     const [optionType, setOptionType] = useState("");
     const [optionNum, setOptionNum] = useState(0);
     const [options, setOptions] = useState([]);
-    const [OptionContent, setOptionContent]=useState(false)
 
     useEffect(()=>{
         setWhichCategory(category);

@@ -72,14 +72,11 @@ const NavBar = ({open, setOpen}) => {
       else{
         setBadgeNum(0);
       }
-      // console.log("rerender");
-      // console.log("bill length: ", bill.items.length);
     },[bill]);
     
     const handleCart = async() => {
       await getTBill(userLineId);
       setOpenCart(true);
-      // console.log("open cart", bill, bill.length);
     };
     
     const handleDrawer = () => {
@@ -124,11 +121,9 @@ const NavBar = ({open, setOpen}) => {
                     color="inherit"
                     disabled={!iflog}
                   >
-                    {/* {iflog?  */}
                     <Badge badgeContent={badgeNum} color="secondary">
                       <ShoppingCartIcon />
                     </Badge>
-                    {/* :<ShoppingCartIcon />} */}
               </IconButton>
               <Dialog 
                 open={openCart} 

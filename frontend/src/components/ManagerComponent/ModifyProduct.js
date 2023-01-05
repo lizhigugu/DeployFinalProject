@@ -16,11 +16,13 @@ import useBackend from "../../containers/hooks/useBackend";
 const ModifyProduct = () => {
     //set state
     const {GetCategories} = useBackend();
+
+    //function define
     useEffect(()=>{
         GetCategories();
     },[])
 
-    //function define
+    
 
 
     return(

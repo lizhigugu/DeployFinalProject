@@ -9,19 +9,16 @@ const OptionTextField = ({setOptions, num, options}) => {
     
     //function define
     const handleSetOptionName = (value) => {
-        //handleSetOptions(value,'name');
         let newArr = [...options];
         newArr[num]['option']=value;
         setOptions(newArr);
     }
     const handleSetOptionNum = (value) => {
-        //handleSetOptions(value,'num');
         let newArr = [...options];
         newArr[num]['bought']=value;
         setOptions(newArr);
     }
     useEffect(()=>{
-        // console.log('options',options)
     },[options])
 
     //return

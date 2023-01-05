@@ -1,29 +1,19 @@
 import React from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-// import {Typography} from "@mui/material";
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
-// import { useState } from 'react';
-import { useWebsite } from '../../containers/hooks/WebsiteContext'; 
-import useBackend from '../../containers/hooks/useBackend';
-// import Bill from './Bill';
 
-//test Data
-//import Bills from "../test datas/Bills.js"
+import useBackend from '../../containers/hooks/useBackend';
 
 const members = ["S.Coups","Jeonghan","Joshua",
 "Jun","Hoshi","Wonwoo","Woozi",
 "THE8","Mingyu","DK",
 "Seungkwan","Vernon","Dino"]
 
-// const iniValue = ["None","None","None","None","None","None","None","None","None","None","None","None","None"]
-
-// const iniInputValue = ["None","None","None","None","None","None","None","None","None","None","None","None","None"]
 
 export default function SortDialog({item,handleSubmit,setOpenCard,BillId,category}) {
 
-    // const {currentBillId} = useWebsite()
     const {AddSequenceList} = useBackend()
 
     
@@ -32,7 +22,6 @@ export default function SortDialog({item,handleSubmit,setOpenCard,BillId,categor
         for(var k=0;k<13;k++){
             S.push(document.getElementById(k).value)
         }
-        // console.log("S: ", S)
         const Data={
             BillId: BillId,
             category: category,
@@ -59,7 +48,6 @@ export default function SortDialog({item,handleSubmit,setOpenCard,BillId,categor
     }
     
     const choosePage=()=>{
-        //console.log(list)
         return(
             <>
             <Box sx={{display:"grid",gap:1.5}}>

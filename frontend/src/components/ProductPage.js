@@ -36,8 +36,6 @@ export default function SwipeableTemporaryDrawer() {
       flexDirection:"row",
       justifyContent:"center"
       }}
-      //onClick={toggleDrawer(anchor, false)}
-      //onKeyDown={toggleDrawer(anchor, false)}
     >
         <Box sx={{
             width: 300,

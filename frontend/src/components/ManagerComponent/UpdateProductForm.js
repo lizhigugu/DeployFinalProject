@@ -87,7 +87,7 @@ const UpdateProductForm = ({ind}) => {
             sold:0,
             buyers:[]
         }))
-        // console.log('ops',ops)
+        
         const Product = {
             name: name,
             category: whichCategory,
@@ -98,7 +98,7 @@ const UpdateProductForm = ({ind}) => {
             option_type: optionNum,
             options: ops
         }
-        // console.log("Product: ", Product);
+
         UpdateProduct(Product);
         setOpen(false);
         

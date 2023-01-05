@@ -5,13 +5,11 @@ import ProductModel from '../models/Product'
 
 const sendData = (data, ws) =>{
     ws.send(JSON.stringify(data));
-    // console.log('send data called in getFunc.');
 }
 
 const GetCategories = async(ws)=>{
     const categories = await CategoryModel.aggregate([
         { $group: { _id: null, category_names: { $push: "$name" } } }])
-    // console.log("get categories: ", categories.length);
     if(categories){
         sendData(["categories",categories[0].category_names],ws);
     }
@@ -35,25 +33,19 @@ const GetProductsByCategory = async(category, ws)=>{
             sendData(["products",[]],ws);
         }
     })
-    //sendData(["products",obj[0].products],ws);
 }
 
 const GetUserData = async (userLineId, ws)=>{
-    // console.log("get user data");
     let ifin = false
     UserModel.find({lineId:userLineId}, async function(err, obj){
         if(obj.length){
             ifin = true;
-            // console.log("userData: ", obj[0]);
             sendData(["userData",obj[0]], ws);
             sendData(["userAvaliable", true], ws);
-            // console.log("true!");
             
         }
         else{
-            // console.log("user not found ;_;");
             sendData(["userAvaliable", false], ws);
-            // console.log("false!");
         }
     })
     return ifin;
@@ -63,7 +55,6 @@ const GetUserBill = async(userLineId, ws)=>{
     let query = userLineId==='all'? {}:{userLineId}
     BillModel.find(query, async function(err, obj){
         if(obj.length){
-            // console.log('in get user bill', obj);
             sendData(["userBill",obj],ws);
         }
         else{
@@ -87,12 +78,10 @@ const GetBill = async(billId, ws)=>{
 
 const GetCatBill = async (category, ws) => {
     BillModel.find({category: category}, async function(err, obj){
-        // console.log("bill of catrgory: ", obj)
         sendData(["userBill", obj], ws)
     })
 
     CategoryModel.find({name: category}, async function (err, obj){
-        // console.log("category: ", obj[0]);
         sendData(["GetCatStatus", obj[0].status], ws);
     })
 }

@@ -12,9 +12,6 @@ import AddProductForm from "./AddProductForm";
 import ProductinCat from "./ProductsinCategory";
 import UpdateCategoryForm from "./UpdateCategoryForm";
 
-//test data improt 
-// import Products from "../../test datas/Products";
-
 //import hooks
 import { useEffect } from 'react'
 import { useWebsite } from "../../containers/hooks/WebsiteContext";

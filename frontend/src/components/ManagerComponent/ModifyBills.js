@@ -41,24 +41,20 @@ const ModifyBills = () => {
             let b_value = parseInt(b.billId.split("_")[1]);
             return (a_value - b_value)*(-1);
         })
-        // console.log("renderBill: ", newUserBill);
         setRenderBill(newUserBill);
     },[])
 
     useEffect(()=>{
-        // console.log('userBill modified.',userBill);
         let newUserBill = [...userBill];
         newUserBill.sort(function(a,b){
             let a_value = parseInt(a.billId.split("_")[1]);
             let b_value = parseInt(b.billId.split("_")[1]);
             return (a_value - b_value)*(-1);
         })
-        // console.log("renderBill: ", newUserBill);
         setRenderBill(newUserBill);
     },[userBill])
 
     useEffect(()=>{
-        // console.log("rerender")
     }, [catStatus])
 
     //function
@@ -79,7 +75,6 @@ const ModifyBills = () => {
     }   
 
     const handleStateBackward = () => {
-        // console.log("handle backward");
         UpdateCategoryStatus({
             category: whichCat,
             action: -1
@@ -87,7 +82,6 @@ const ModifyBills = () => {
     }
 
     const handleStateForward = () => {
-        // console.log("handle forward");
         UpdateCategoryStatus({
             category: whichCat,
             action: 1

@@ -21,7 +21,6 @@ const ProductinCat = ({item,ind}) => {
     //function defince
 
     const handleDelete = () => {
-        // console.log("product handle delete");
         DeleteProduct({name:item.name,category:item.category});
     }
 

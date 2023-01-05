@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { useWebsite } from "../../containers/hooks/WebsiteContext";
 import useBackend from "../../containers/hooks/useBackend"
-import client from "../../containers/hooks/wsConnect";
 
 // mui import
 import Box from '@mui/material/Box';
@@ -22,10 +21,8 @@ function ProductsTabs() {
   const { GetCategories, GetProductsByCategory } = useBackend();
   
   const [value, setValue] = useState('all');
-  const [renderProducts, setRenderProducts] = useState([]);
 
   const handleChange = (event, newValue) => {
-    // console.log(newValue);
     setValue(newValue);
   };
 
@@ -40,8 +37,6 @@ function ProductsTabs() {
   },[value])
 
   useEffect(()=>{
-    // console.log("client: ", client);
-    // console.log("rerender products");
   },[products]);
 
   return (

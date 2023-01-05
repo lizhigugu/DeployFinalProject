@@ -29,7 +29,6 @@ const UpdateUserForm = () => {
 
     //set state
     const [open, setOpen] = useState(false);
-    const [date, setDate] = useState(dayjs(""));
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [address, setAddress] = useState('');

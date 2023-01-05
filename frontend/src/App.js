@@ -4,13 +4,11 @@ import './App.css';
 
 // Container Import
 import MainPage from './containers/MainPage';
-import ProductPage from "./components/ProductPage";
 import PersonalPage from "./containers/PersonalPage";
 import BillPage from "./containers/BillPage";
 import ManagerPage from "./containers/ManagerPage";
 import CheckPage from "./containers/CheckPage";
 import Login from "./containers/Login";
-import UseLogin from "./containers/useLogin";
 
 // Bar Component Import
 import NavBar from "./components/BarComponent/NavBar";
@@ -35,7 +33,6 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-    {/* <WebsiteProvider> */}
     <Router>
       <NavBar open={open} setOpen={setOpen}/>
       <Main open={open}>
@@ -47,12 +44,10 @@ function App() {
           <Route path="/personal" element={iflog? <PersonalPage />:<Login />} />
           <Route path="/personal/bills" element={iflog? <BillPage />:<Login />} />
           <Route path="/manager" element={(iflog && isManager)? <ManagerPage />:<Login />} />
-          {/* <Route path="/forlogin" element={<UseLogin />} /> */}
         </Routes>
         </DrawerHeader>
       </Main>
     </Router>
-    {/* </WebsiteProvider> */}
     </ThemeProvider>
   );
 }

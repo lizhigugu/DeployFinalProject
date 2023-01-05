@@ -6,9 +6,6 @@ import { List} from "@mui/material";
 //component import 
 import CategoryListItem from "./CategoryListItem";
 
-//testData import 
-// import Category from "../../test datas/Category";
-
 //hooks import
 import { useState } from 'react'
 // import useBackend from "../../containers/hooks/useBackend";

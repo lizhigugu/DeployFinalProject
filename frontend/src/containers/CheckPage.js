@@ -21,9 +21,6 @@ import { useNavigate } from 'react-router-dom';
 import { useWebsite } from './hooks/WebsiteContext'; 
 import useBackend from './hooks/useBackend';
 
-//711
-//import {getStories} from '../../../backend/src/711/711stores';
-
 //functional component
 const CheckPage = () => {
     //set state
@@ -34,18 +31,16 @@ const CheckPage = () => {
     const [value, setValue] = React.useState("");
     const [name, setName] = React.useState('');
     const [inputValue, setInputValue] = React.useState("");
-    const [address, setAddress] = React.useState('');
     const [county, setCounty] = React.useState("");
     const [bank, setBank] = React.useState("");
     const [Account, setAccount] = React.useState("")
     
     //hooks
     const {bill, total, userData, stores, userLineId, paywhich} = useWebsite();
-    const {ConfirmBill, GetStores, AddBillToUser, renewTBill, GetUserBill} = useBackend();
+    const {ConfirmBill, GetStores, renewTBill, GetUserBill} = useBackend();
     const navigate = useNavigate();
 
     React.useEffect(()=>{
-        console.log('use effect called.');
         setPhone(userData.phoneNumber);
         setName(userData.name);
         setValue(userData.address);
@@ -79,11 +74,7 @@ const CheckPage = () => {
 
     const onHandleCheckout=()=>{
         new Date();
-        // const id = userLineId+"_"+JSON.stringify(bill._id.getTimestamp()).replace(/"/g, '')
         const id = userLineId+"_"+JSON.stringify(Date.now()).replace(/"/g, '')
-        console.log("date now: ", id);
-        // AddBillToUser(userLineId, id);
-        // console.log("billid: ", currentBillId);
         const BillInfo = {
             userLineId: userLineId,
             billId  : id,
@@ -99,7 +90,6 @@ const CheckPage = () => {
         }
         ConfirmBill(BillInfo, userLineId);
         renewTBill(userLineId, bill.ItemList[paywhich].category);
-        // console.log("renewTBill");
         navigate("/personal/bills");
         GetUserBill(userLineId);
     }
@@ -262,12 +252,10 @@ const CheckPage = () => {
                     sx={{gridColumnStart:2,gridColumnEnd:3,marginTop:"7.5px"}}
                     value={value}
                     onChange={(event, newValue) => {
-                        console.log("newValue: ", newValue);
                         setValue(newValue);
                     }}
                     inputValue={inputValue}
                     onInputChange={(event, newInputValue) => {
-                        console.log("newInputValue: ", newInputValue);
                         setInputValue(newInputValue);
                     }}
                     renderInput={(params) => <TextField {...params} label="門市" 

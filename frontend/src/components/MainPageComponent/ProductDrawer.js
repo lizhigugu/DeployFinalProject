@@ -18,7 +18,6 @@ import { useNavigate } from "react-router-dom";
 // functional component
 const ProductDrawer = ({item, handleClose}) => {
     // set state
-    // const [option, setOption] = useState("");
     const [number, setNumber] = useState(1);
     const [optionChosed, setOptionChosed] = useState("");
     const [note, setNote]     = useState("");
@@ -35,8 +34,6 @@ const ProductDrawer = ({item, handleClose}) => {
     // currentBillId: ming_2022-12-30T09:14:22.000Z
     const onAddItemToBill = (name, price, option, number, note, product_type, category)=>{
         const item = {name, price, option, number, note, product_type, category}
-        // const BillId = 'ming_2022-12-30T09:14:22.000Z'
-        // console.log("adding item to bill", item, currentBillId);
         AddItemToTBill(userLineId, item);
         setUserBill([]);
     }
@@ -88,9 +85,6 @@ const ProductDrawer = ({item, handleClose}) => {
                                 if(e.target.value >= 0){
                                     setNumber(e.target.value);
                                 }
-                                //else{
-                                  //  setNumber(0);
-                                //}
                             }
                         }
                         else if(isNaN(e.target.value)){

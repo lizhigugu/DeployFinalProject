@@ -32,7 +32,6 @@ const CartInclude = ({open ,setOpen}) => {
 
     useEffect(()=>{
         let tot = 0;
-        // bill.items.map((value,index)=>(tot+=value.price*value.number))
         setTotal(tot);
     },[bill])
 

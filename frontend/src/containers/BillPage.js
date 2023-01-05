@@ -25,7 +25,6 @@ const BillPage = () => {
         GetUserBill(userLineId);
     },[])
     useEffect(()=>{
-        // console.log('user bill',userLineId,userBill);
     },[userBill])
     
     //return

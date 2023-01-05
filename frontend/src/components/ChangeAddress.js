@@ -24,11 +24,10 @@ const ChangeAddress=({setOpen, receiver, phone, address})=>{
     "屏東縣","花蓮縣","台東縣","澎湖縣","金門縣","連江縣","海南諸島"
     ]
 
-    const {bill, total, currentBillId, userData, stores} = useWebsite();
+    const {currentBillId, userData, stores} = useWebsite();
     const {UpdateBillAddress, GetStores} = useBackend();
 
     React.useEffect(()=>{
-        // console.log('use effect called.');
         setPhone(userData.phoneNumber);
         setName(userData.name);
         setValue(userData.address);
@@ -40,8 +39,6 @@ const ChangeAddress=({setOpen, receiver, phone, address})=>{
             address : value.substring(0,6)
         }
         UpdateBillAddress(BillInfo);
-        // console.log("BillInfo", BillInfo)
-        //navigate("/personal/bills")
     }
 
     var a=[]

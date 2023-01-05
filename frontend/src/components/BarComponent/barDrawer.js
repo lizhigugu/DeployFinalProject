@@ -26,7 +26,7 @@ import { drawerWidth } from './BarConstDef';
 import { useWebsite } from '../../containers/hooks/WebsiteContext';
 
 // react import 
-import {useState, useEffect} from "react";
+import {useEffect} from "react";
 import ManageAccounts from '@mui/icons-material/ManageAccounts';
 
 
@@ -70,7 +70,6 @@ const BarDrawer = ({open, setOpen, theme}) => {
 
     //useEffect
     useEffect(()=>{
-      // console.log("in barDrawer: ", isManager);
     }, [isManager])
 
     //return

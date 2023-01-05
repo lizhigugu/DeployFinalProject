@@ -24,7 +24,7 @@ const ChangeAddress=({setOpen, receiver, phone, address, billId})=>{
     "屏東縣","花蓮縣","台東縣","澎湖縣","金門縣","連江縣","海南諸島"
     ]
 
-    const {currentBillId, userData, stores} = useWebsite();
+    const {currentBillId, userData, stores, userLineId} = useWebsite();
     const {UpdateBillAddress, GetStores} = useBackend();
 
     React.useEffect(()=>{

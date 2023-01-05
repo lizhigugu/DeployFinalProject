@@ -25,7 +25,10 @@ const MainPage = () => {
 
     //return
     return(
+        <>
+        {GetCategories()}
         <ProductsTabs />
+        </>
     )
 
 }

@@ -64,7 +64,7 @@ const Login = () => {
         // 必填
         URL += 'response_type=code' // 希望LINE回應什麼  但是目前只有code能選
         URL += `&client_id=${1657771320}` // 你的頻道ID
-        URL += `&redirect_uri=https://gomywonjam-hello.up.railway.app/login`
+        URL += `&redirect_uri=https://test-production-fc86.up.railway.app/login`
         URL += '&state=2361886424832' // 用來防止跨站請求的 之後回傳會傳回來給你驗證 通常設亂數 這邊就先放123456789
         URL += '&scope=openid%20profile' // 跟使用者要求的權限 目前就三個能選 openid profile email
         // 選填
